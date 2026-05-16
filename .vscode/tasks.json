@@ -8,9 +8,10 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
+                "-c",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.o"
             ],
             "options": {
                 "cwd": "${fileDirname}"
