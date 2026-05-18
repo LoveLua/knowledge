@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g -I/opt/homebrew/include
 LIBS = -L/opt/homebrew/lib -lsqlite3 -lhpdf
-TARGET = app
+TARGET = app.bin
 
 all:
 	@echo "==================================="
