@@ -6,6 +6,8 @@
 
 //Third-party library 
 #include <sqlite3.h>
+
+//haru free pdf library , japanse developer [source by github ]
 #include <hpdf.h>
 
 //self define header file
@@ -25,11 +27,42 @@ int main(){
 	printf("current date is : %d : %d : %d \n" , current_year , current_month ,current_day );
 
 	char birthday_year_str[5] ;
-	strncpy(birthday_year_str ,birthday ,4);
+	strncpy(&birthday_year_str[0] ,birthday ,4);
 	birthday_year_str[4] = '\0';
 
-	int birthday_year = atoi(birthday_year_str);
-	printf("get year birthday : %d \n " ,birthday_year );
+	char birthday_month_str[2];
+	strncpy(&birthday_month_str[0] ,&birthday[5] ,1);
+	birthday_month_str[1] = '\0';
+	int birthday_month = atoi(&birthday_month_str[0] );
+
+	int birthday_year = atoi(&birthday_year_str[0] );
+	int age = current_year - birthday_year ;
+
+	char birthday_day_str[3];
+	strncpy(&birthday_day_str[0] ,&birthday[7] ,2 );
+	birthday_day_str[2] = '\0' ;
+	int birthday_day = atoi(&birthday_day_str[0] );
+	//int birthday_day = atoi(birthday_day_str );
+	printf("get year birthday : %d ,get month : %d ,get day : %d \n " ,birthday_year ,birthday_month ,birthday_day );
+
+	if(current_month > birthday_month || ( current_month == birthday_month && current_day >= birthday_day )){
+			; //year deviation establish 
+	}else{
+		age--;
+	}
+	printf("Current Age is %d \n",age );
+	// is or not pass birthday at this year . judge 
+//	if
+
+	//tell me next step for building hobby apps . [1]
+	
+	//tell me that your life costing to help me manage expectation . [2]
+	
+	//tell me that your income expect to give me confidence . [3]
+	
+	//tell me that recent diet structure to keep health . [4]
+	
+	//health , cash flow .future . total three parts , let me reassuring .
     return 0;
 }
 
